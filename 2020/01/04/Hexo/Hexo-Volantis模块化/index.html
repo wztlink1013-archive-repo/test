@@ -1,0 +1,3220 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Hexo-Volantis模块化组件——meta和widget - 尼采般地抒情</title>
+  
+    <meta name="keywords" content="Hexo">
+  
+  
+    <meta name="description" content="这是测试主题各个属性文章摘要">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="尼采般地抒情">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.0/styles/atom-one-dark.css">
+  <link rel='shortcut icon' type='image/x-icon' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='icon' type='image/x-icon' sizes='32x32' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='apple-touch-icon' type='image/png' sizes='180x180' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='mask-icon' color='#1BC3FB' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='manifest' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	      setTimeout(function() { 
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aef53763739d310fbc3bdb6818db2a1f";
+		        hm.defer=true;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+	      }, 5000);
+    })();
+    </script>
+
+  
+</head>
+
+<body>
+  
+  <div class="cover-wrapper">
+    
+      <cover class='cover post half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+      <img class='logo' src='https://cdn.jsdelivr.net/gh/wztlink1013/CDN@2.3/logo_4_96.png'/>
+
+    
+    
+
+    
+
+  </div>
+  <div class='b'>
+    <!-- 删掉搜索栏！ -->
+    <!-- 
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+     -->
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- 打字特效 -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <div style="text-align: center;font-weight: normal;color: rgb(16, 100, 255);font-size:18px">
+      <span id="subtitle"></span>
+      <span id="typed-cursor"></span>
+    </div>
+    <script>
+      var typed = new Typed("#subtitle", { strings: ["永远不要对自己说尽力了、","山里偷得半日的闲，搁这儿 遛弯的人别扰","安分，不太焦虑，耐得住寂寞，这世界上有很多人每天都在焦虑，怕没得到，怕焦虑"], startDelay: 1000, typeSpeed: 100, loop: !0, backSpeed: 60, backDelay: 2000, showCursor: !0 })
+    </script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- 打字特效 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <div style="text-align: center;font-weight: bold;color: #1BC3FB;">
+      <span id="subtitle"></span>
+      <span id="typed-cursor"></span>
+    </div>
+    <script>
+      var typed = new Typed("#subtitle", { strings: ["Live a good life, write some good code !!!", "愿自己的努力终将获得回报。", "花开不是为了花落，而是为了开的更加灿烂。", "没有伞的孩子必须努力奔跑！", "欲望以提升热忱，毅力以磨平高山。", "如果放弃太早，你永远都不知道自己会错过什么。", "没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。"], startDelay: 1000, typeSpeed: 100, loop: !0, backSpeed: 60, backDelay: 2000, showCursor: !0 })
+    </script> -->
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img class='logo' src='https://cdn.jsdelivr.net/gh/wztlink1013/CDN@2.1/029189b7dd3f481fb0f781d84f6f46cc.PNG'/>
+          
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              
+                <li>
+                  <a class="flat-box">
+                    <i class='fas fa-compact-disc fa-fw music'></i>
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js
+      theme='#325bf0'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='4881623383'
+      list-folded='false'>
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                <li>
+              
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>技术
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/visualization/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:wztlink1013comvisualization"
+                  >
+                  <i class='fab fa-accusoft fa-fw'></i>算法图解
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>文章分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>文章标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>文章归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>生活
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://essay.wztlink1013.com
+                  
+                  
+                  
+                    id="https:essaywztlink1013com"
+                  >
+                  <i class='fas fa-link fa-fw'></i>生活随笔站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/essay/
+                  
+                  
+                  
+                    id="essay"
+                  >
+                  <i class='fas fa-pen-square fa-fw'></i>碎碎念 essay
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/books/
+                  
+                  
+                  
+                    id="books"
+                  >
+                  <i class='fas fa-book-open fa-fw'></i>一书一世界
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/movies/
+                  
+                  
+                  
+                    id="movies"
+                  >
+                  <i class='fas fa-video fa-fw'></i>人生电影课
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/games/
+                  
+                  
+                  
+                    id="games"
+                  >
+                  <i class='fas fa-gamepad fa-fw'></i>速度与激情
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/myfootprint/
+                  
+                  
+                  
+                    id="https:wztlink1013commyfootprint"
+                  >
+                  <i class='fas fa-shoe-prints fa-fw'></i>我的足迹
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>frinds
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-user-tag fa-fw'></i>Me
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-street-view fa-fw'></i>关于我
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com
+                  
+                  
+                  
+                    id="https:wztlink1013com"
+                  >
+                  <i class='fab fa-fort-awesome fa-fw'></i>总站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://leancloud.wztlink1013.com/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:leancloudwztlink1013com"
+                  >
+                  <i class='fas fa-user-lock fa-fw'></i>后台管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=https://travellings.now.sh/
+                  
+                  
+                  
+                    id="https:travellingsnowsh"
+                  >
+                  <i class='fas fa-plane fa-fw'></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="搜索你想要的···" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>技术
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/visualization/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:wztlink1013comvisualization"
+                  >
+                  <i class='fab fa-accusoft fa-fw'></i>算法图解
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>文章分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>文章标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>文章归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>生活
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://essay.wztlink1013.com
+                  
+                  
+                  
+                    id="https:essaywztlink1013com"
+                  >
+                  <i class='fas fa-link fa-fw'></i>生活随笔站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/essay/
+                  
+                  
+                  
+                    id="essay"
+                  >
+                  <i class='fas fa-pen-square fa-fw'></i>碎碎念 essay
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/books/
+                  
+                  
+                  
+                    id="books"
+                  >
+                  <i class='fas fa-book-open fa-fw'></i>一书一世界
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/movies/
+                  
+                  
+                  
+                    id="movies"
+                  >
+                  <i class='fas fa-video fa-fw'></i>人生电影课
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/games/
+                  
+                  
+                  
+                    id="games"
+                  >
+                  <i class='fas fa-gamepad fa-fw'></i>速度与激情
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/myfootprint/
+                  
+                  
+                  
+                    id="https:wztlink1013commyfootprint"
+                  >
+                  <i class='fas fa-shoe-prints fa-fw'></i>我的足迹
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>frinds
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-user-tag fa-fw'></i>Me
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-street-view fa-fw'></i>关于我
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com
+                  
+                  
+                  
+                    id="https:wztlink1013com"
+                  >
+                  <i class='fab fa-fort-awesome fa-fw'></i>总站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://leancloud.wztlink1013.com/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:leancloudwztlink1013com"
+                  >
+                  <i class='fas fa-user-lock fa-fw'></i>后台管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=https://travellings.now.sh/
+                  
+                  
+                  
+                    id="https:travellingsnowsh"
+                  >
+                  <i class='fas fa-plane fa-fw'></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='random'
+      server='netease'
+      type='song'
+      id='16846091'>
+    </meting-js>
+  
+
+
+      
+      
+        <a title='Hexo-Volantis模块化组件——meta和widget' href='/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/'><img class='thumbnail' src='https://wztlink1013.coding.net/p/figure/d/figure/git/raw/master/20200519115134.png'></a>
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/">
+      Hexo-Volantis模块化组件——meta和widget
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://wztlink1013.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/figure/blogbase/touxiang.jpg">
+    <p>尼采般地抒情</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Hexo/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Hexo</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年1月4日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：988字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/" class="leancloud_visitors" data-flag-title="Hexo-Volantis模块化组件——meta和widget">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><h3 id="览表"><a href="#览表" class="headerlink" title="览表"></a>览表</h3><p>front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量。更多请见 Hexo 官方文档：<a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">#front-matter</a></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>layout</td>
+<td>布局模版</td>
+<td>String</td>
+<td>-</td>
+<td>有list、page、post三种</td>
+</tr>
+<tr>
+<td>title</td>
+<td>页面标题</td>
+<td>String</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>seo_title</td>
+<td>网页标题</td>
+<td>String</td>
+<td>page.title</td>
+<td>浏览器栏显示的</td>
+</tr>
+<tr>
+<td>short_title</td>
+<td>页面标题</td>
+<td>String</td>
+<td>page.title</td>
+<td>在group列表中显示</td>
+</tr>
+<tr>
+<td>date</td>
+<td>创建时间</td>
+<td>Date</td>
+<td>文件创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>updated</td>
+<td>更新日期</td>
+<td>Date</td>
+<td>文件修改时间</td>
+<td></td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>覆盖文章网址</td>
+<td>String</td>
+<td>-</td>
+<td>一般用于转载文章【title: [转]XXX】【然后加一张图片】</td>
+</tr>
+<tr>
+<td>music</td>
+<td>内部音乐控件</td>
+<td>[Object]</td>
+<td>-</td>
+<td>【三个必选参数】<a href="https://aplayer\.js\.org/\#/zh\-Hans/" target="_blank" rel="noopener">https://aplayer\.js\.org/\#/zh\-Hans/</a></td>
+</tr>
+<tr>
+<td>robots</td>
+<td>robots</td>
+<td>String</td>
+<td>-</td>
+<td>【？？？】</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>页面关键词</td>
+<td>String</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>页面描述、摘要</td>
+<td>String</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>cover</td>
+<td>是否显示封面</td>
+<td>Bool</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>meta</td>
+<td>文章或页面的meta信息</td>
+<td>Bool, Array</td>
+<td>theme.layout.*.meta</td>
+<td>【暂时这么多】title，author，date,updated,category,top,counter,wordcount,tags,share,btns,</td>
+</tr>
+<tr>
+<td>sidebar</td>
+<td>页面侧边栏</td>
+<td>Bool, Array</td>
+<td>theme.layout.*.sidebar</td>
+<td>【自定义设计】  - blogger   - xiaoheiban   - donate   - list_essay   - references   - related_repos   - dao_hang   - page_1   - group-1   - copyright   - related_posts   - tagcloud   - category   - toc</td>
+</tr>
+<tr>
+<td>body</td>
+<td>页面主体元素</td>
+<td>Array</td>
+<td>theme.layout.on_page.body</td>
+<td>【默认[article, comments]】【自定义[article, related_posts, comments]】</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>是否渲染公式</td>
+<td>Bool, String</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>thumbnail</td>
+<td>缩略图</td>
+<td>String</td>
+<td>false</td>
+<td>【thumbnail: <a href="https://wztlink1013\.coding\.net/p/figure/d/figure/git/raw/master/20200519115134\.png】" target="_blank" rel="noopener">https://wztlink1013\.coding\.net/p/figure/d/figure/git/raw/master/20200519115134\.png】</a></td>
+</tr>
+<tr>
+<td>icons</td>
+<td>图标</td>
+<td>Array</td>
+<td>[]</td>
+<td>【icons: [fas fa-fire red, fas fa-star green]归档页面显示，参数red / blue / green / yellow / orange / theme / accent】</td>
+</tr>
+</tbody></table>
+<h3 id="layout-post"><a href="#layout-post" class="headerlink" title="layout:post"></a><strong>layout:post</strong></h3><p>时特有的字段：</p>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">含义</th>
+<th align="left">值类型</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">author</td>
+<td align="left">文章作者</td>
+<td align="left">[Object]</td>
+<td align="left">config.author</td>
+</tr>
+<tr>
+<td align="left">categories</td>
+<td align="left">分类</td>
+<td align="left">String, Array</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">tags</td>
+<td align="left">标签</td>
+<td align="left">String, Array</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">toc</td>
+<td align="left">是否生成目录</td>
+<td align="left">Bool</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">top</td>
+<td align="left">是否置顶</td>
+<td align="left">Bool</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<h3 id="author"><a href="#author" class="headerlink" title="author"></a><strong>author</strong></h3><table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">含义</th>
+<th align="left">值类型</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">name</td>
+<td align="left">作者名</td>
+<td align="left">String</td>
+<td align="left">config.author</td>
+</tr>
+<tr>
+<td align="left">avatar</td>
+<td align="left">头像</td>
+<td align="left">String</td>
+<td align="left">config.avatar</td>
+</tr>
+<tr>
+<td align="left">url</td>
+<td align="left">链接</td>
+<td align="left">String</td>
+<td align="left">config.url</td>
+</tr>
+</tbody></table>
+<h3 id="music"><a href="#music" class="headerlink" title="music"></a><strong>music</strong></h3><table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">是否必须</th>
+<th align="left">值类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">server</td>
+<td align="left">是</td>
+<td align="left">netease, tencent, kugou, xiami, baidu</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">是</td>
+<td align="left">song, playlist, album, search, artist</td>
+</tr>
+<tr>
+<td align="left">id</td>
+<td align="left">是</td>
+<td align="left">song id / playlist id / album id / search keyword</td>
+</tr>
+</tbody></table>
+<h3 id="特定widget参数"><a href="#特定widget参数" class="headerlink" title="特定widget参数"></a>特定widget参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">pid: haha</span><br><span class="line"></span><br><span class="line">references:</span><br><span class="line">  - name: Apple Developer Documentation</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">  - name: Apple Developer Documentation</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">related_repos:</span><br><span class="line">  - name: Apple Developer Documentation</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line"></span><br><span class="line">group: group-1</span><br><span class="line">order: 16</span><br></pre></td></tr></table></figure>
+<h3 id="标题居中"><a href="#标题居中" class="headerlink" title="标题居中"></a>标题居中</h3><p>让meta只保留下面一个参数，则标题居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">meta:</span><br><span class="line">  header: [centertitle]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"># 基本信息</span><br><span class="line">title: Hexo-Volantis-meta-widget测试</span><br><span class="line">categories: [Hexo]</span><br><span class="line">tags: [Hexo]</span><br><span class="line">date: 2020-01-04 21:23:23</span><br><span class="line">description: 这是测试主题各个属性文章摘要</span><br><span class="line"></span><br><span class="line">meta:</span><br><span class="line">  header: [title,author,category,date,wordcount,counter,top]</span><br><span class="line">  footer: [updated,tags,btns,share]</span><br><span class="line">  # 如果是page页面的话，添加这个可以显示，post的设置在_data里面的layput.yml里面</span><br><span class="line">  article_footer: [references,related_repos,donate,related_posts,copyright] </span><br><span class="line"></span><br><span class="line">sidebar: [blogger,xiaoheiban,map,donate,list_essay,dao_hang,page_tongyong,group-Hexo,related_posts,tagcloud,category,toc]</span><br><span class="line"></span><br><span class="line"># 参考资料 &amp; 链接仓库</span><br><span class="line">references:</span><br><span class="line">- name: 参考资料1</span><br><span class="line">  url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">- name: 参考资料2</span><br><span class="line">  url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">related_repos:</span><br><span class="line">- name: 本项目GitHub仓库</span><br><span class="line">  url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line"># 系列文章索引</span><br><span class="line">group: group-Hexo </span><br><span class="line">order: 16</span><br><span class="line"># 通用页面</span><br><span class="line">pid: tongyong</span><br><span class="line"># 显示的页脚按钮</span><br><span class="line">btns:</span><br><span class="line">  repo: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#39;</span><br><span class="line">  bug: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#x2F;issues&#x2F;&#39;</span><br><span class="line">  doubt: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#x2F;issues&#x2F;&#39;</span><br><span class="line">  idea: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#x2F;issues&#x2F;&#39;</span><br><span class="line"># 侧边小图片</span><br><span class="line">thumbnail: https:&#x2F;&#x2F;wztlink1013.coding.net&#x2F;p&#x2F;figure&#x2F;d&#x2F;figure&#x2F;git&#x2F;raw&#x2F;master&#x2F;20200519115134.png</span><br><span class="line"># 侧边音乐按钮</span><br><span class="line">music:</span><br><span class="line">  server: netease   # netease, tencent, kugou, xiami, baidu</span><br><span class="line">  type: song        # song, playlist, album, search, artist</span><br><span class="line">  id: 16846091      # song id &#x2F; playlist id &#x2F; album id &#x2F; search keyword</span><br><span class="line"># 是否显示封面</span><br><span class="line">cover: true</span><br></pre></td></tr></table></figure>
+<h2 id="meta库"><a href="#meta库" class="headerlink" title="meta库"></a>meta库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">meta:</span><br><span class="line">  header: [title,author,category,date,wordcount,counter,top]</span><br></pre></td></tr></table></figure>
+<img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712150118.png' alt='meta中的header部位' style='width:400px'>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">footer: [updated,tags,btns,share]</span><br></pre></td></tr></table></figure>
+<img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712150136.png' alt='meta中的footer部位' style='width:400px'>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">article_footer: [copyright,donate,related_posts]</span><br></pre></td></tr></table></figure>
+
+<img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712170515.png' alt='meta中的article_footer部位' style='width:400px'>
+
+<h2 id="widget库"><a href="#widget库" class="headerlink" title="widget库"></a>widget库</h2><h3 id="主题配置中widget"><a href="#主题配置中widget" class="headerlink" title="主题配置中widget"></a>主题配置中widget</h3><div class="gallery ">
+              <p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145645.png" alt="博主信息blogger"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145742.png" alt="标签云tagcloud"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145813.png" alt="文章分类category"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145851.png" alt="文章目录toc"></p>
+            </div>
+
+<h3 id="text小黑板访客地图"><a href="#text小黑板访客地图" class="headerlink" title="text小黑板访客地图"></a>text小黑板访客地图</h3><blockquote>
+<p>基本上放在首页</p>
+</blockquote>
+<div class="gallery ">
+              <p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712161653.png" alt="小黑板"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162145.png" alt="访客地图"></p>
+            </div>
+
+<h3 id="qrcode二维码-图片展示"><a href="#qrcode二维码-图片展示" class="headerlink" title="qrcode二维码/图片展示"></a>qrcode二维码/图片展示</h3><blockquote>
+<p>页脚可以显示；sidebar显示</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162401.png" alt=""></p>
+<h3 id="list侧边栏列表"><a href="#list侧边栏列表" class="headerlink" title="list侧边栏列表"></a>list侧边栏列表</h3><blockquote>
+<p>“文集”</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162441.png" alt=""></p>
+<h3 id="references参考资料-amp-相关GitHub仓库"><a href="#references参考资料-amp-相关GitHub仓库" class="headerlink" title="references参考资料 &amp; 相关GitHub仓库"></a>references参考资料 &amp; 相关GitHub仓库</h3><blockquote>
+<p>文章脚步；sidebar部位</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162544.png" alt=""><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162612.png" alt=""></p>
+<h3 id="group系列文章"><a href="#group系列文章" class="headerlink" title="group系列文章"></a>group系列文章</h3><p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162929.png" alt=""></p>
+<h3 id="grid通用导航"><a href="#grid通用导航" class="headerlink" title="grid通用导航"></a>grid通用导航</h3><p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163034.png" alt=""></p>
+<h3 id="page通用页面"><a href="#page通用页面" class="headerlink" title="page通用页面"></a>page通用页面</h3><p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163213.png" alt=""></p>
+<h3 id="copyright文章版权"><a href="#copyright文章版权" class="headerlink" title="copyright文章版权"></a>copyright文章版权</h3><blockquote>
+<p>文章页脚、sidebar部位（基本不用）</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163251.png" alt=""></p>
+<h3 id="related-posts相关文章"><a href="#related-posts相关文章" class="headerlink" title="related_posts相关文章"></a>related_posts相关文章</h3><blockquote>
+<p>文章页脚、sidebar部位</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163311.png" alt=""></p>
+
+          
+            <div class='article_footer'>
+              <!-- TODO:大概在这添加赞赏功能 -->
+              <!-- 
+                先在资源文件夹中添加_reward CSS文件;然后在style.styl文件中加入引用刚刚添加的
+                将reward.ejs文件放在_widget文件夹里面
+                最后改article.ejs文件
+                ===试试能不能直接在文章头引用该_widget
+                好的,不能,溜了!
+               -->
+              <!-- TODO:大概在这添加赞赏功能 -->
+
+              
+                
+  
+    
+    
+
+
+  
+
+<section class="widget list references  desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-quote-left fa-fw" aria-hidden="true"></i><span class='name'>本文参考资料</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="https://developer.apple.com/documentation/" href="https://developer.apple.com/documentation/"
+          
+          
+          id="https:developerapplecomdocumentation"
+          >
+          <div class='name'>
+            
+            参考资料1
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://developer.apple.com/documentation/" href="https://developer.apple.com/documentation/"
+          
+          
+          id="https:developerapplecomdocumentation"
+          >
+          <div class='name'>
+            
+            参考资料2
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+
+  
+
+  
+    
+    
+
+
+  
+
+<section class="widget list references  desktop mobile">
+  
+  <header>
+    
+      <i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>本文源码链接</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="https://developer.apple.com/documentation/" href="https://developer.apple.com/documentation/"
+          
+          
+          id="https:developerapplecomdocumentation"
+          >
+          <div class='name'>
+            
+            本项目GitHub仓库
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110907.png'
+        
+          height='66px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110739.png'
+        
+          height='66px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110907.png'
+        
+          height='66px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110739.png'
+        
+          height='66px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts  desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>作者相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\04\Hexo\HelloWorld\" title="Hello World" rel="bookmark">Hello World</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\06\Hexo\Hexo-CodingPages-GitHubPages双线部署\" title="Hexo同时结合Coding Pages和GitHub Pages双线部署实现国内外访问" rel="bookmark">Hexo同时结合Coding Pages和GitHub Pages双线部署实现国内外访问</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\02\25\Hexo\PicGo和GitHub构建免费图床及使用\" title="GitHub+PicGo构建免费图床及其高效使用" rel="bookmark">GitHub+PicGo构建免费图床及其高效使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\25\Hexo\Hexo-Volantis写作\" title="Hexo-Volantis写作" rel="bookmark">Hexo-Volantis写作</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\16\Hexo\Hexo-markdown写作\" title="Hexo-markdown写作" rel="bookmark">Hexo-markdown写作</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文作者：尼采般地抒情</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://blog.wztlink1013.com/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/>https://blog.wztlink1013.com/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+                
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-12T19:50:57+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年7月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Hexo</p></a></div>
+
+
+        
+      
+        
+          
+  <div class='new-meta-item link-btns'>
+    
+      <a class='btn flat-box' href='https://github.com/xaoxuu/hexo-theme-volantis' target="_blank" rel="noopener" style='background: #508EF2'>
+        <i class='fas fa-file-code' aria-hidden='true'></i>
+        <p>源码</p>
+      </a>
+    
+    
+      <a class='btn flat-box' href='https://github.com/xaoxuu/hexo-theme-volantis/issues/' target="_blank" rel="noopener" style='background: #FE5F58'>
+        <i class='fas fa-bug' aria-hidden='true'></i>
+        <p>BUG</p>
+      </a>
+    
+    
+      <a class='btn flat-box' href='https://github.com/xaoxuu/hexo-theme-volantis/issues/' target="_blank" rel="noopener" style='background: #FFBD2B'>
+        <i class='fas fa-question-circle' aria-hidden='true'></i>
+        <p>疑问</p>
+      </a>
+    
+    
+      <a class='btn flat-box' href='https://github.com/xaoxuu/hexo-theme-volantis/issues/' target="_blank" rel="noopener" style='background: #3DC550'>
+        <i class='fas fa-lightbulb' aria-hidden='true'></i>
+        <p>建议</p>
+      </a>
+    
+    
+    
+    
+    
+    
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wztlink1013.com/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/&title=Hexo-Volantis模块化组件——meta和widget - 尼采般地抒情&pics=https://wztlink1013.coding.net/p/figure/d/figure/git/raw/master/20200519115134.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wztlink1013.com/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/&title=Hexo-Volantis模块化组件——meta和widget - 尼采般地抒情&pics=https://wztlink1013.coding.net/p/figure/d/figure/git/raw/master/20200519115134.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.wztlink1013.com/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/&title=Hexo-Volantis模块化组件——meta和widget - 尼采般地抒情&pics=https://wztlink1013.coding.net/p/figure/d/figure/git/raw/master/20200519115134.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEbUlEQVR42u3aS64bMQwEQN//0sk+QTBsktI4D6Wd7flIJS9Eoj+/jCPjgwAsWAMsWLAG2Cuwn+Z4uj99/p/X/+vzeOHF97U9wIIFCxYsWLBgwV6F3ZpY9fsUsLqw6n3V9cUeYMGCBQsWLFiwYF+BTQ/wU/BpQXF6g+OCBixYsGDBggULFux/AdvdgBR+qyG/tdFgwYIFCxYsWLBg/2/YrQ2ZgnevAwsWLFiwYMGCBfszYNOAQvX6bsO5C74dNLmehAELFixYsGDBggVbgt1qIP+Uz20PsGDBggULFixYsFdgp2O7YbxVsHQLjLEHWLBgwYIFCxYs2Cuw3YBDuqDuAqfBkS3oshNYsGDBggULFizYK7BVkHJgoXh9CtNeaLORnb4HLFiwYMGCBQsW7HfCpgfvrcDHtMGebnh3A8GCBQsWLFiwYMG+A5s2hLsL3wpidAuV7kaWCxWwYMGCBQsWLFiwV2CnQYjp7+kGpM/ZKlTKzwELFixYsGDBggV7BfZUQzluEIcH9er7t+ffrrzAggULFixYsGDBHoGtNrjT36sLnQJvBTjGhQpYsGDBggULFizYV2DTA/k0+JBuUDWAUZ1v2vB+XA9YsGDBggULFizYV2G3AxDpxKvPPxUwAQsWLFiwYMGCBfvdsFsN37ThnRYCpwqA7oaDBQsWLFiwYMGC/Q7YaWCje5BPN6i60d37uuBgwYIFCxYsWLBg78JOJ7RdMEwb4FPwcYMfLFiwYMGCBQsW7BXYrcbxWqO4Cf50oN9qvD/ODyxYsGDBggULFuyrsOkCu+DTRnu3kb4V3IgLBLBgwYIFCxYsWLArsN2CID24dwMSpzZkq/B4DGyABQsWLFiwYMGCPQrbDTBMr98OgHSfv1YogQULFixYsGDBgr0CmwYotg7YW432NIhxar5gwYIFCxYsWLBg34HtBiC6B/ju87ca72lhUd5AsGDBggULFixYsFdgqxPugncDFd0AyO2CAixYsGDBggULFuw7sN3AwukgRfdAfypYUi4kwIIFCxYsWLBgwV6F7QYopo3xKUS68PQPEG8AWLBgwYIFCxYs2Cuw3YP5tJCovnctSLE0v8c/EFiwYMGCBQsWLNgrsCnYFvAWXFqwpOuLCyGwYMGCBQsWLFiwV2C7BUI64enBftoY70Jfr7zAggULFixYsGDBRrBbjeFPONKDezcg0t3gGB4sWLBgwYIFCxbsVdju2DrAbxUW3dENrPz1PViwYMGCBQsWLNgrsNOJdIHiBvItmLBweUzCgAULFixYsGDBgj0KOy0I0gP9NkR3HdX5lL8HCxYsWLBgwYIF+wpsGqyYAk0Buw3x44ENsGDBggULFixYsF8NmwYytg7u3YJlet2jB1iwYMGCBQsWLNgfAZs2vKu/bxUkWwESsGDBggULFixYsO/Cdl9Y3YBpQKK7sd1C4bUkDFiwYMGCBQsWLNgSbDrSg3laOKRBkWljfOs+sGDBggULFixYsHdgjd0BFixYAyxYsAbYo+M33FvRBbRU3mcAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+      
+        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer"
+          
+            href="https://t.me/share/url?url=https://blog.wztlink1013.com/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/&text=Hexo-Volantis模块化组件——meta和widget - 尼采般地抒情"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/telegram.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/01/06/Hexo/Hexo-CodingPages-GitHubPages%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Hexo同时结合Coding Pages和GitHub Pages双线部署实现国内外访问</p>
+                <p class='content'>
+              
+            
+
+个人博客网页搭建全过程！（持续更新）
+
+
+零、前言本文章没有太多整理，只是自己搭建过程中自己的备忘总结，日后会整理自己所有使用心得
+
+...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/01/04/Hexo/HelloWorld/'>
+                <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> <b>留言评论区</b></p>
+      
+        <p cst>欢迎在此畅所欲言、</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Hexo-Volantis模块化组件——meta和widget',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/wztlink1013/figure/blogbase/touxiang.jpg'/>
+        </a>
+      
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/wztlink1013"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@wztlink1013.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2550374815&site=qq&menu=yes"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++=添加彩色变换字体++++++++++++++++++ -->
+  <div id="binft"></div>
+  <script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["青青陵上柏，磊磊涧中石。", "人生天地间，忽如远行客。","斗酒相娱乐，聊厚不为薄。", "驱车策驽马，游戏宛与洛。","洛中何郁郁，冠带自相索。","长衢罗夹巷，王侯多第宅。","两宫遥相望，双阙百余尺。","极宴娱心意，戚戚何所迫？"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
+    
+  </div>
+  
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget text shadow desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-file fa-fw" aria-hidden="true"></i><span class='name'>小黑板</span>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <h2 id="♫-进击的灵魂-♫"><a href="#♫-进击的灵魂-♫" class="headerlink" title="♫ 进击的灵魂 ♫"></a><center><b><font color="#9d1be3">♫ 进击的灵魂 ♫</font></b></center></h2>
+    
+      <center><font color="#fa23e4">本站点：总结技术，欢迎交流</font></center>
+    
+      <center><font color="#5c0fba">碎碎念：</font><a href="https://blog.wztlink1013.com/essay">时空隧道传送门 ~</a></center><br>
+    
+      <center><font color="#482af5">💙 生命不息，战斗不止！💙</font></center>
+    
+      <p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/figure/blogimgs/1-160216115019.jpg" alt=""></p>
+
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget text shadow desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i><span class='name'>欢迎来访</span>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("💙欢迎来自"+returnCitySN["cname"]+"的朋友💙");document.write("<br>您的 IP 是："+returnCitySN["cip"]);document.write("<br>您使用的是："+getOSAndBrowser());</script>
+    
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=L9XM0kcsQI7XBqchRaT0LYGfMnvcSFT98wUzkKMQC-w&cl=ffffff&w=a"></script>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode shadow desktop">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110907.png'
+        
+          height='66px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110739.png'
+        
+          height='66px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110907.png'
+        
+          height='66px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200708110739.png'
+        
+          height='66px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget list shadow desktop mobile">
+  
+  <header>
+    
+      <a href='/wiki/'><i class="fas fa-chevron-left fa-fw" aria-hidden="true"></i><span class='name'>闲言随笔</span></a>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="/wiki/volantis/" href="/wiki/volantis/"
+          
+          
+          id="wikivolantis"
+          >
+          <div class='name'>
+            
+              <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://wztlink1013.coding.net/p/figure/d/figure/git/raw/master/20200519115134.png">
+            
+            文集：《江南》
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/books/" href="/books/"
+          
+          
+          id="books"
+          >
+          <div class='name'>
+            
+              <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://wztlink1013.coding.net/p/figure/d/figure/git/raw/master/20200519115134.png">
+            
+            我的阅读
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget grid shadow desktop mobile">
+  
+  <header>
+    
+      <a href='https://github.com/wztlink1013' target="_blank" rel="noopener"><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>通用导航widget</span></a>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="https://github.com/xaoxuu/hexo-theme-volantis/issues/" href="https://github.com/xaoxuu/hexo-theme-volantis/issues/"
+          
+          
+          id="https:githubcomxaoxuuhexo-theme-volantisissues">
+          
+            <i class="fas fa-bug fa-fw" aria-hidden="true"></i>
+          
+          反馈BUG
+        </a>
+      
+        <a class="flat-box" title="https://github.com/xaoxuu/hexo-theme-volantis/issues/" href="https://github.com/xaoxuu/hexo-theme-volantis/issues/"
+          
+          
+          id="https:githubcomxaoxuuhexo-theme-volantisissues">
+          
+            <i class="fas fa-question-circle fa-fw" aria-hidden="true"></i>
+          
+          疑问求助
+        </a>
+      
+        <a class="flat-box" title="https://github.com/xaoxuu/hexo-theme-volantis/issues/" href="https://github.com/xaoxuu/hexo-theme-volantis/issues/"
+          
+          
+          id="https:githubcomxaoxuuhexo-theme-volantisissues">
+          
+            <i class="fas fa-lightbulb fa-fw" aria-hidden="true"></i>
+          
+          提个建议
+        </a>
+      
+        <a class="flat-box" title="https://github.com/xaoxuu/hexo-theme-volantis/issues/" href="https://github.com/xaoxuu/hexo-theme-volantis/issues/"
+          
+          
+          id="https:githubcomxaoxuuhexo-theme-volantisissues">
+          
+            <i class="fas fa-bug fa-fw" aria-hidden="true"></i>
+          
+          反馈BUG
+        </a>
+      
+        <a class="flat-box" title="https://github.com/xaoxuu/hexo-theme-volantis/issues/" href="https://github.com/xaoxuu/hexo-theme-volantis/issues/"
+          
+          
+          id="https:githubcomxaoxuuhexo-theme-volantisissues">
+          
+            <i class="fas fa-question-circle fa-fw" aria-hidden="true"></i>
+          
+          疑问求助
+        </a>
+      
+        <a class="flat-box" title="https://github.com/xaoxuu/hexo-theme-volantis/issues/" href="https://github.com/xaoxuu/hexo-theme-volantis/issues/"
+          
+          
+          id="https:githubcomxaoxuuhexo-theme-volantisissues">
+          
+            <i class="fas fa-lightbulb fa-fw" aria-hidden="true"></i>
+          
+          提个建议
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget page shadow desktop mobile">
+  
+
+  <div class='content'>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <article id="post" class="post article-type-post" itemscope itemprop="blogPost">
+          <section class="article typo">
+            <div class="article-entry" itemprop="articleBody">
+              
+                <h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><h3 id="览表"><a href="#览表" class="headerlink" title="览表"></a>览表</h3><p>front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量。更多请见 Hexo 官方文档：<a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">#front-matter</a></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+<th>值类型</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>layout</td>
+<td>布局模版</td>
+<td>String</td>
+<td>-</td>
+<td>有list、page、post三种</td>
+</tr>
+<tr>
+<td>title</td>
+<td>页面标题</td>
+<td>String</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>seo_title</td>
+<td>网页标题</td>
+<td>String</td>
+<td>page.title</td>
+<td>浏览器栏显示的</td>
+</tr>
+<tr>
+<td>short_title</td>
+<td>页面标题</td>
+<td>String</td>
+<td>page.title</td>
+<td>在group列表中显示</td>
+</tr>
+<tr>
+<td>date</td>
+<td>创建时间</td>
+<td>Date</td>
+<td>文件创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>updated</td>
+<td>更新日期</td>
+<td>Date</td>
+<td>文件修改时间</td>
+<td></td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>覆盖文章网址</td>
+<td>String</td>
+<td>-</td>
+<td>一般用于转载文章【title: [转]XXX】【然后加一张图片】</td>
+</tr>
+<tr>
+<td>music</td>
+<td>内部音乐控件</td>
+<td>[Object]</td>
+<td>-</td>
+<td>【三个必选参数】<a href="https://aplayer\.js\.org/\#/zh\-Hans/" target="_blank" rel="noopener">https://aplayer\.js\.org/\#/zh\-Hans/</a></td>
+</tr>
+<tr>
+<td>robots</td>
+<td>robots</td>
+<td>String</td>
+<td>-</td>
+<td>【？？？】</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>页面关键词</td>
+<td>String</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>页面描述、摘要</td>
+<td>String</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>cover</td>
+<td>是否显示封面</td>
+<td>Bool</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>meta</td>
+<td>文章或页面的meta信息</td>
+<td>Bool, Array</td>
+<td>theme.layout.*.meta</td>
+<td>【暂时这么多】title，author，date,updated,category,top,counter,wordcount,tags,share,btns,</td>
+</tr>
+<tr>
+<td>sidebar</td>
+<td>页面侧边栏</td>
+<td>Bool, Array</td>
+<td>theme.layout.*.sidebar</td>
+<td>【自定义设计】  - blogger   - xiaoheiban   - donate   - list_essay   - references   - related_repos   - dao_hang   - page_1   - group-1   - copyright   - related_posts   - tagcloud   - category   - toc</td>
+</tr>
+<tr>
+<td>body</td>
+<td>页面主体元素</td>
+<td>Array</td>
+<td>theme.layout.on_page.body</td>
+<td>【默认[article, comments]】【自定义[article, related_posts, comments]】</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>是否渲染公式</td>
+<td>Bool, String</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>thumbnail</td>
+<td>缩略图</td>
+<td>String</td>
+<td>false</td>
+<td>【thumbnail: <a href="https://wztlink1013\.coding\.net/p/figure/d/figure/git/raw/master/20200519115134\.png】" target="_blank" rel="noopener">https://wztlink1013\.coding\.net/p/figure/d/figure/git/raw/master/20200519115134\.png】</a></td>
+</tr>
+<tr>
+<td>icons</td>
+<td>图标</td>
+<td>Array</td>
+<td>[]</td>
+<td>【icons: [fas fa-fire red, fas fa-star green]归档页面显示，参数red / blue / green / yellow / orange / theme / accent】</td>
+</tr>
+</tbody></table>
+<h3 id="layout-post"><a href="#layout-post" class="headerlink" title="layout:post"></a><strong>layout:post</strong></h3><p>时特有的字段：</p>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">含义</th>
+<th align="left">值类型</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">author</td>
+<td align="left">文章作者</td>
+<td align="left">[Object]</td>
+<td align="left">config.author</td>
+</tr>
+<tr>
+<td align="left">categories</td>
+<td align="left">分类</td>
+<td align="left">String, Array</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">tags</td>
+<td align="left">标签</td>
+<td align="left">String, Array</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">toc</td>
+<td align="left">是否生成目录</td>
+<td align="left">Bool</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">top</td>
+<td align="left">是否置顶</td>
+<td align="left">Bool</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<h3 id="author"><a href="#author" class="headerlink" title="author"></a><strong>author</strong></h3><table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">含义</th>
+<th align="left">值类型</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">name</td>
+<td align="left">作者名</td>
+<td align="left">String</td>
+<td align="left">config.author</td>
+</tr>
+<tr>
+<td align="left">avatar</td>
+<td align="left">头像</td>
+<td align="left">String</td>
+<td align="left">config.avatar</td>
+</tr>
+<tr>
+<td align="left">url</td>
+<td align="left">链接</td>
+<td align="left">String</td>
+<td align="left">config.url</td>
+</tr>
+</tbody></table>
+<h3 id="music"><a href="#music" class="headerlink" title="music"></a><strong>music</strong></h3><table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">是否必须</th>
+<th align="left">值类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">server</td>
+<td align="left">是</td>
+<td align="left">netease, tencent, kugou, xiami, baidu</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">是</td>
+<td align="left">song, playlist, album, search, artist</td>
+</tr>
+<tr>
+<td align="left">id</td>
+<td align="left">是</td>
+<td align="left">song id / playlist id / album id / search keyword</td>
+</tr>
+</tbody></table>
+<h3 id="特定widget参数"><a href="#特定widget参数" class="headerlink" title="特定widget参数"></a>特定widget参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">pid: haha</span><br><span class="line"></span><br><span class="line">references:</span><br><span class="line">  - name: Apple Developer Documentation</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">  - name: Apple Developer Documentation</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">related_repos:</span><br><span class="line">  - name: Apple Developer Documentation</span><br><span class="line">    url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line"></span><br><span class="line">group: group-1</span><br><span class="line">order: 16</span><br></pre></td></tr></table></figure>
+<h3 id="标题居中"><a href="#标题居中" class="headerlink" title="标题居中"></a>标题居中</h3><p>让meta只保留下面一个参数，则标题居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">meta:</span><br><span class="line">  header: [centertitle]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"># 基本信息</span><br><span class="line">title: Hexo-Volantis-meta-widget测试</span><br><span class="line">categories: [Hexo]</span><br><span class="line">tags: [Hexo]</span><br><span class="line">date: 2020-01-04 21:23:23</span><br><span class="line">description: 这是测试主题各个属性文章摘要</span><br><span class="line"></span><br><span class="line">meta:</span><br><span class="line">  header: [title,author,category,date,wordcount,counter,top]</span><br><span class="line">  footer: [updated,tags,btns,share]</span><br><span class="line">  # 如果是page页面的话，添加这个可以显示，post的设置在_data里面的layput.yml里面</span><br><span class="line">  article_footer: [references,related_repos,donate,related_posts,copyright] </span><br><span class="line"></span><br><span class="line">sidebar: [blogger,xiaoheiban,map,donate,list_essay,dao_hang,page_tongyong,group-Hexo,related_posts,tagcloud,category,toc]</span><br><span class="line"></span><br><span class="line"># 参考资料 &amp; 链接仓库</span><br><span class="line">references:</span><br><span class="line">- name: 参考资料1</span><br><span class="line">  url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">- name: 参考资料2</span><br><span class="line">  url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line">related_repos:</span><br><span class="line">- name: 本项目GitHub仓库</span><br><span class="line">  url: &#39;https:&#x2F;&#x2F;developer.apple.com&#x2F;documentation&#x2F;&#39;</span><br><span class="line"># 系列文章索引</span><br><span class="line">group: group-Hexo </span><br><span class="line">order: 16</span><br><span class="line"># 通用页面</span><br><span class="line">pid: tongyong</span><br><span class="line"># 显示的页脚按钮</span><br><span class="line">btns:</span><br><span class="line">  repo: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#39;</span><br><span class="line">  bug: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#x2F;issues&#x2F;&#39;</span><br><span class="line">  doubt: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#x2F;issues&#x2F;&#39;</span><br><span class="line">  idea: &#39;https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis&#x2F;issues&#x2F;&#39;</span><br><span class="line"># 侧边小图片</span><br><span class="line">thumbnail: https:&#x2F;&#x2F;wztlink1013.coding.net&#x2F;p&#x2F;figure&#x2F;d&#x2F;figure&#x2F;git&#x2F;raw&#x2F;master&#x2F;20200519115134.png</span><br><span class="line"># 侧边音乐按钮</span><br><span class="line">music:</span><br><span class="line">  server: netease   # netease, tencent, kugou, xiami, baidu</span><br><span class="line">  type: song        # song, playlist, album, search, artist</span><br><span class="line">  id: 16846091      # song id &#x2F; playlist id &#x2F; album id &#x2F; search keyword</span><br><span class="line"># 是否显示封面</span><br><span class="line">cover: true</span><br></pre></td></tr></table></figure>
+<h2 id="meta库"><a href="#meta库" class="headerlink" title="meta库"></a>meta库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">meta:</span><br><span class="line">  header: [title,author,category,date,wordcount,counter,top]</span><br></pre></td></tr></table></figure>
+<img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712150118.png' alt='meta中的header部位' style='width:400px'>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">footer: [updated,tags,btns,share]</span><br></pre></td></tr></table></figure>
+<img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712150136.png' alt='meta中的footer部位' style='width:400px'>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">article_footer: [copyright,donate,related_posts]</span><br></pre></td></tr></table></figure>
+
+<img src='https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712170515.png' alt='meta中的article_footer部位' style='width:400px'>
+
+<h2 id="widget库"><a href="#widget库" class="headerlink" title="widget库"></a>widget库</h2><h3 id="主题配置中widget"><a href="#主题配置中widget" class="headerlink" title="主题配置中widget"></a>主题配置中widget</h3><div class="gallery ">
+              <p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145645.png" alt="博主信息blogger"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145742.png" alt="标签云tagcloud"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145813.png" alt="文章分类category"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712145851.png" alt="文章目录toc"></p>
+            </div>
+
+<h3 id="text小黑板访客地图"><a href="#text小黑板访客地图" class="headerlink" title="text小黑板访客地图"></a>text小黑板访客地图</h3><blockquote>
+<p>基本上放在首页</p>
+</blockquote>
+<div class="gallery ">
+              <p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712161653.png" alt="小黑板"><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162145.png" alt="访客地图"></p>
+            </div>
+
+<h3 id="qrcode二维码-图片展示"><a href="#qrcode二维码-图片展示" class="headerlink" title="qrcode二维码/图片展示"></a>qrcode二维码/图片展示</h3><blockquote>
+<p>页脚可以显示；sidebar显示</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162401.png" alt=""></p>
+<h3 id="list侧边栏列表"><a href="#list侧边栏列表" class="headerlink" title="list侧边栏列表"></a>list侧边栏列表</h3><blockquote>
+<p>“文集”</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162441.png" alt=""></p>
+<h3 id="references参考资料-amp-相关GitHub仓库"><a href="#references参考资料-amp-相关GitHub仓库" class="headerlink" title="references参考资料 &amp; 相关GitHub仓库"></a>references参考资料 &amp; 相关GitHub仓库</h3><blockquote>
+<p>文章脚步；sidebar部位</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162544.png" alt=""><br><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162612.png" alt=""></p>
+<h3 id="group系列文章"><a href="#group系列文章" class="headerlink" title="group系列文章"></a>group系列文章</h3><p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712162929.png" alt=""></p>
+<h3 id="grid通用导航"><a href="#grid通用导航" class="headerlink" title="grid通用导航"></a>grid通用导航</h3><p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163034.png" alt=""></p>
+<h3 id="page通用页面"><a href="#page通用页面" class="headerlink" title="page通用页面"></a>page通用页面</h3><p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163213.png" alt=""></p>
+<h3 id="copyright文章版权"><a href="#copyright文章版权" class="headerlink" title="copyright文章版权"></a>copyright文章版权</h3><blockquote>
+<p>文章页脚、sidebar部位（基本不用）</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163251.png" alt=""></p>
+<h3 id="related-posts相关文章"><a href="#related-posts相关文章" class="headerlink" title="related_posts相关文章"></a>related_posts相关文章</h3><blockquote>
+<p>文章页脚、sidebar部位</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/ImgHsoting/pic1/20200712163311.png" alt=""></p>
+
+              
+            </div>
+          </section>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  
+
+<section class="widget list group shadow desktop mobile">
+  
+  <header>
+    
+      <i class="fab fa-apple fa-fw" aria-hidden="true"></i><span class='name'>Hexo系列文章索引</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="/2020/01/16/Hexo/Hexo-markdown%E5%86%99%E4%BD%9C/" href="/2020/01/16/Hexo/Hexo-markdown%E5%86%99%E4%BD%9C/"
+          
+          
+          id="20200116HexoHexo-markdownE58699E4BD9C"
+          >
+          <div class='name'>
+            
+            Hexo-markdown写作
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/" href="/2020/01/04/Hexo/Hexo-Volantis%E6%A8%A1%E5%9D%97%E5%8C%96/"
+          
+          
+          id="20200104HexoHexo-VolantisE6A8A1E59D97E58C96"
+          >
+          <div class='name'>
+            
+            Hexo-Volantis模块化组件——meta和widget
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>作者相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\04\Hexo\HelloWorld\" title="Hello World" rel="bookmark">Hello World</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\06\Hexo\Hexo-CodingPages-GitHubPages双线部署\" title="Hexo同时结合Coding Pages和GitHub Pages双线部署实现国内外访问" rel="bookmark">Hexo同时结合Coding Pages和GitHub Pages双线部署实现国内外访问</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\02\25\Hexo\PicGo和GitHub构建免费图床及使用\" title="GitHub+PicGo构建免费图床及其高效使用" rel="bookmark">GitHub+PicGo构建免费图床及其高效使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\25\Hexo\Hexo-Volantis写作\" title="Hexo-Volantis写作" rel="bookmark">Hexo-Volantis写作</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\16\Hexo\Hexo-markdown写作\" title="Hexo-markdown写作" rel="bookmark">Hexo-markdown写作</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/ANN/" style="font-size: 14px; color: #999">ANN</a> <a href="/tags/Anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/C/" style="font-size: 16px; color: #8b8b8b">C</a> <a href="/tags/C/" style="font-size: 16px; color: #8b8b8b">C++</a> <a href="/tags/CDN/" style="font-size: 14px; color: #999">CDN</a> <a href="/tags/CMD/" style="font-size: 14px; color: #999">CMD</a> <a href="/tags/CSS/" style="font-size: 14px; color: #999">CSS</a> <a href="/tags/DataAnalysis/" style="font-size: 20px; color: #707070">DataAnalysis</a> <a href="/tags/DataBase/" style="font-size: 14px; color: #999">DataBase</a> <a href="/tags/Eclipse/" style="font-size: 16px; color: #8b8b8b">Eclipse</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/Hexo/" style="font-size: 22px; color: #636363">Hexo</a> <a href="/tags/JAVA/" style="font-size: 20px; color: #707070">JAVA</a> <a href="/tags/JavaScript/" style="font-size: 14px; color: #999">JavaScript</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/OS/" style="font-size: 16px; color: #8b8b8b">OS</a> <a href="/tags/PicGo/" style="font-size: 14px; color: #999">PicGo</a> <a href="/tags/Pycharm/" style="font-size: 14px; color: #999">Pycharm</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/beautifulsoup/" style="font-size: 14px; color: #999">beautifulsoup</a> <a href="/tags/bokeh/" style="font-size: 14px; color: #999">bokeh</a> <a href="/tags/bug/" style="font-size: 24px; color: #555">bug</a> <a href="/tags/code/" style="font-size: 14px; color: #999">code</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">jupyter</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/tags/matplotlib/" style="font-size: 14px; color: #999">matplotlib</a> <a href="/tags/myqr/" style="font-size: 14px; color: #999">myqr</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/pandas/" style="font-size: 18px; color: #7e7e7e">pandas</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/qrcode/" style="font-size: 14px; color: #999">qrcode</a> <a href="/tags/scikit-learn/" style="font-size: 14px; color: #999">scikit-learn</a> <a href="/tags/scrapy/" style="font-size: 14px; color: #999">scrapy</a> <a href="/tags/seaborn/" style="font-size: 14px; color: #999">seaborn</a> <a href="/tags/sklearn/" style="font-size: 14px; color: #999">sklearn</a> <a href="/tags/spider/" style="font-size: 16px; color: #8b8b8b">spider</a> <a href="/tags/tomcat/" style="font-size: 14px; color: #999">tomcat</a> <a href="/tags/yuque/" style="font-size: 16px; color: #8b8b8b">yuque</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">机器学习</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 14px; color: #999">硬件</a>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Bug/" href="/categories/Bug/"
+            id="categoriesBug"
+            ><div class='name'>Bug</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataAnalysis/" href="/categories/DataAnalysis/"
+            id="categoriesDataAnalysis"
+            ><div class='name'>DataAnalysis</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataBase/" href="/categories/DataBase/"
+            id="categoriesDataBase"
+            ><div class='name'>DataBase</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataStructure/" href="/categories/DataStructure/"
+            id="categoriesDataStructure"
+            ><div class='name'>DataStructure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Environment/" href="/categories/Environment/"
+            id="categoriesEnvironment"
+            ><div class='name'>Environment</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Hexo/" href="/categories/Hexo/"
+            id="categoriesHexo"
+            ><div class='name'>Hexo</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Language/" href="/categories/Language/"
+            id="categoriesLanguage"
+            ><div class='name'>Language</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/MachingLearning/" href="/categories/MachingLearning/"
+            id="categoriesMachingLearning"
+            ><div class='name'>MachingLearning</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/OS/" href="/categories/OS/"
+            id="categoriesOS"
+            ><div class='name'>OS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/PostProduction/" href="/categories/PostProduction/"
+            id="categoriesPostProduction"
+            ><div class='name'>PostProduction</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Spider/" href="/categories/Spider/"
+            id="categoriesSpider"
+            ><div class='name'>Spider</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Web/" href="/categories/Web/"
+            id="categoriesWeb"
+            ><div class='name'>Web</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+      
+    </div>
+    
+  </section>
+
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Front-matter"><span class="toc-text">Front-matter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#览表"><span class="toc-text">览表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#layout-post"><span class="toc-text">layout:post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#author"><span class="toc-text">author</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#music"><span class="toc-text">music</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特定widget参数"><span class="toc-text">特定widget参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标题居中"><span class="toc-text">标题居中</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#end"><span class="toc-text">end</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meta库"><span class="toc-text">meta库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#widget库"><span class="toc-text">widget库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主题配置中widget"><span class="toc-text">主题配置中widget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text小黑板访客地图"><span class="toc-text">text小黑板访客地图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#qrcode二维码-图片展示"><span class="toc-text">qrcode二维码&#x2F;图片展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list侧边栏列表"><span class="toc-text">list侧边栏列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#references参考资料-amp-相关GitHub仓库"><span class="toc-text">references参考资料 &amp; 相关GitHub仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#group系列文章"><span class="toc-text">group系列文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grid通用导航"><span class="toc-text">grid通用导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#page通用页面"><span class="toc-text">page通用页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#copyright文章版权"><span class="toc-text">copyright文章版权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#related-posts相关文章"><span class="toc-text">related_posts相关文章</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/wztlink1013"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@wztlink1013.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2550374815&amp;site=qq&amp;menu=yes"
+                class="social fab fa-qq flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://blog.wztlink1013.com"><font size=3 color="#000000">Copyright © 2019-2020 尼采般地抒情 | </font></a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP"><a href="http://icp.chinaz.com/wztlink1013.com" target="_blank" rel="noopener"><font size=3 color="#000000">赣ICP备20002826号 | </font></a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP"><a href="https://icp.gov.moe/?keyword=20201013" target="_blank"><font size=3 color="#000000"> 萌ICP备20201013号</p>
+
+        <!-- 网站最底端的那些小格子 -->
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+          <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+          <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://www.aliyun.com/" target="_blank" title="阿里云提供域名相关服务">
+          <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">Aliyun</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+          <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+        </div>
+        <div class="github-badge">
+            <a style="color: #fff" rel="license" href="https://volantis.js.org/" target="_blank" title="站点使用 Volantis 主题">
+          <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Volantis</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+          <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://travellings.now.sh/" target="_blank" title="开往-友链接力">
+          <span class="badge-subject">Link</span><span class="badge-value bg-red">Travelling</span></a>
+        </div>
+        <!-- <div class="github-badge">
+          <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+        </div>
+        <div class="github-badge">
+          <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+        </div>
+        <div class="github-badge">
+          <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">64.4k</span>
+        </div> -->
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+<!-- artitalk-开始 -->
+
+<!-- artitalk-结束 -->
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.2/background_picture/ZIYOUZIYI.jpg", "https://cdn.jsdelivr.net/gh/wztlink1013/CDN@1.8/Pictures/blogbackground/background1.jpg", "https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.2/background_picture/AILUN_AERMIN.jpg", "https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.2/background_picture/MIKASA.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "4000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "4000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "G24t81T4NDSUeGy6t0azWRQR-gzGzoHsz",
+    appKey: "IEUmFFoYQ27XvIRw3JF77Plk",
+    placeholder: "快来评论吧~",
+    pageSize:'8',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  <!-- 动态线条背景 -->
+  <!-- <script type="text/javascript" color="30,144,255" opacity='1' zIndex="-2" count="200" 
+  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script> -->
+  <!-- 樱花飘落背景 -->
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SGYZ0910/CDN@1.0.6/js/sakura.js"></script> -->
+  <!-- 速度优化脚本 -->
+  <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.0.2/js/instantclick-1.2.2.js" type="module"></script>
+  <!-- 页面下钱 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> -->
+  <!-- <script src="https://www.yyhy.me/q.js"></script> -->
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: true,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
