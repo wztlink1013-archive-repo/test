@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>numpy-使用总结 - 尼采般地抒情</title>
+  
+    <meta name="keywords" content="numpy">
+  
+  
+    <meta name="description" content="numpy的使用，以及常用函数的总结">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="尼采般地抒情">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.0/styles/atom-one-dark.css">
+  <link rel='shortcut icon' type='image/x-icon' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='icon' type='image/x-icon' sizes='32x32' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='apple-touch-icon' type='image/png' sizes='180x180' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='mask-icon' color='#1BC3FB' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  <link rel='manifest' href='https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.0/icons/Totoro.ico'>
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	      setTimeout(function() { 
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aef53763739d310fbc3bdb6818db2a1f";
+		        hm.defer=true;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+	      }, 5000);
+    })();
+    </script>
+
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img class='logo' src='https://cdn.jsdelivr.net/gh/wztlink1013/CDN@2.1/029189b7dd3f481fb0f781d84f6f46cc.PNG'/>
+          
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              
+                <li>
+                  <a class="flat-box">
+                    <i class='fas fa-compact-disc fa-fw music'></i>
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js
+      theme='#325bf0'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='4881623383'
+      list-folded='false'>
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                <li>
+              
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>技术
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/visualization/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:wztlink1013comvisualization"
+                  >
+                  <i class='fab fa-accusoft fa-fw'></i>算法图解
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>文章分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>文章标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>文章归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>生活
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://essay.wztlink1013.com
+                  
+                  
+                  
+                    id="https:essaywztlink1013com"
+                  >
+                  <i class='fas fa-link fa-fw'></i>生活随笔站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/essay/
+                  
+                  
+                  
+                    id="essay"
+                  >
+                  <i class='fas fa-pen-square fa-fw'></i>碎碎念 essay
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/books/
+                  
+                  
+                  
+                    id="books"
+                  >
+                  <i class='fas fa-book-open fa-fw'></i>一书一世界
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/movies/
+                  
+                  
+                  
+                    id="movies"
+                  >
+                  <i class='fas fa-video fa-fw'></i>人生电影课
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/games/
+                  
+                  
+                  
+                    id="games"
+                  >
+                  <i class='fas fa-gamepad fa-fw'></i>速度与激情
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/myfootprint/
+                  
+                  
+                  
+                    id="https:wztlink1013commyfootprint"
+                  >
+                  <i class='fas fa-shoe-prints fa-fw'></i>我的足迹
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>frinds
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-user-tag fa-fw'></i>Me
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-street-view fa-fw'></i>关于我
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com
+                  
+                  
+                  
+                    id="https:wztlink1013com"
+                  >
+                  <i class='fab fa-fort-awesome fa-fw'></i>总站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://leancloud.wztlink1013.com/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:leancloudwztlink1013com"
+                  >
+                  <i class='fas fa-user-lock fa-fw'></i>后台管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=https://travellings.now.sh/
+                  
+                  
+                  
+                    id="https:travellingsnowsh"
+                  >
+                  <i class='fas fa-plane fa-fw'></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="搜索你想要的···" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>技术
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/visualization/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:wztlink1013comvisualization"
+                  >
+                  <i class='fab fa-accusoft fa-fw'></i>算法图解
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>文章分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>文章标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>文章归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>生活
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://essay.wztlink1013.com
+                  
+                  
+                  
+                    id="https:essaywztlink1013com"
+                  >
+                  <i class='fas fa-link fa-fw'></i>生活随笔站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/essay/
+                  
+                  
+                  
+                    id="essay"
+                  >
+                  <i class='fas fa-pen-square fa-fw'></i>碎碎念 essay
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/books/
+                  
+                  
+                  
+                    id="books"
+                  >
+                  <i class='fas fa-book-open fa-fw'></i>一书一世界
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/movies/
+                  
+                  
+                  
+                    id="movies"
+                  >
+                  <i class='fas fa-video fa-fw'></i>人生电影课
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/games/
+                  
+                  
+                  
+                    id="games"
+                  >
+                  <i class='fas fa-gamepad fa-fw'></i>速度与激情
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com/myfootprint/
+                  
+                  
+                  
+                    id="https:wztlink1013commyfootprint"
+                  >
+                  <i class='fas fa-shoe-prints fa-fw'></i>我的足迹
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-users fa-fw'></i>frinds
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-user-tag fa-fw'></i>Me
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-street-view fa-fw'></i>关于我
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://wztlink1013.com
+                  
+                  
+                  
+                    id="https:wztlink1013com"
+                  >
+                  <i class='fab fa-fort-awesome fa-fw'></i>总站点
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=https://leancloud.wztlink1013.com/
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="https:leancloudwztlink1013com"
+                  >
+                  <i class='fas fa-user-lock fa-fw'></i>后台管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=https://travellings.now.sh/
+                  
+                  
+                  
+                    id="https:travellingsnowsh"
+                  >
+                  <i class='fas fa-plane fa-fw'></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/">
+      numpy-使用总结
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://wztlink1013.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/wztlink1013/figure/blogbase/touxiang.jpg">
+    <p>尼采般地抒情</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/DataAnalysis/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>DataAnalysis</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年2月10日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="numpy-使用总结">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h2 id="一、NumPy"><a href="#一、NumPy" class="headerlink" title="一、NumPy"></a>一、NumPy</h2><h3 id="ndarray-理解多维数组"><a href="#ndarray-理解多维数组" class="headerlink" title="ndarray 理解多维数组"></a>ndarray 理解多维数组</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成指定维度的随机多维数据</span></span><br><span class="line"><span class="comment">#数学建模应该用不到</span></span><br><span class="line">data = np.random.rand(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (data)</span><br><span class="line"><span class="keyword">print</span> (type(data))</span><br><span class="line"><span class="comment">#type是显示数据类型；shape显示维度；ndim维度个数;type另外的作用</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0.46686682 0.68844304 0.76663872]
+ [0.70747721 0.47887587 0.25943412]]
+&lt;class &apos;numpy.ndarray&apos;&gt;</code></pre><blockquote>
+<p>ndim, shape 和 dtype 属性</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'维度个数'</span>, data.ndim)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'各维度大小: '</span>, data.shape)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'数据类型: '</span>, data.dtype)</span><br></pre></td></tr></table></figure>
+
+<pre><code>维度个数 2
+各维度大小:  (2, 3)
+数据类型:  float64</code></pre><h3 id="创建ndarray"><a href="#创建ndarray" class="headerlink" title="创建ndarray"></a>创建ndarray</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''1. array创建'''</span></span><br><span class="line"><span class="comment"># list转换为 ndarray</span></span><br><span class="line">l = range(<span class="number">10</span>)</span><br><span class="line">data = np.array(l)</span><br><span class="line"><span class="keyword">print</span> (data)</span><br><span class="line"><span class="keyword">print</span> (data.shape)</span><br><span class="line"><span class="keyword">print</span> (data.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2 3 4 5 6 7 8 9]
+(10,)
+1</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 嵌套序列转换为ndarray</span></span><br><span class="line">l2 = [range(<span class="number">10</span>), range(<span class="number">10</span>)]</span><br><span class="line"><span class="comment">#就这样形成了一个数组</span></span><br><span class="line">data = np.array(l2)</span><br><span class="line"><span class="keyword">print</span> (data)</span><br><span class="line"><span class="keyword">print</span> (data.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0 1 2 3 4 5 6 7 8 9]
+ [0 1 2 3 4 5 6 7 8 9]]
+(2, 10)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''2. zeros;ones;empty创建'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># np.zeros</span></span><br><span class="line">zeros_arr = np.zeros((<span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line"><span class="comment">#注意元组，这里经常报错</span></span><br><span class="line"><span class="comment"># np.ones</span></span><br><span class="line">ones_arr = np.ones((<span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># np.empty[不全为零，而且是随机的一些数字]</span></span><br><span class="line">empty_arr = np.empty((<span class="number">3</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># np.empty 指定数据类型</span></span><br><span class="line">empty_int_arr = np.empty((<span class="number">3</span>, <span class="number">3</span>), int)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (zeros_arr)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'-------------'</span>)</span><br><span class="line"><span class="keyword">print</span> (ones_arr)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'-------------'</span>)</span><br><span class="line"><span class="keyword">print</span> (empty_arr)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'-------------'</span>)</span><br><span class="line"><span class="keyword">print</span> (empty_int_arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+-------------
+[[1. 1. 1.]
+ [1. 1. 1.]]
+-------------
+[[0.000e+000 0.000e+000 0.000e+000]
+ [0.000e+000 0.000e+000 2.174e-321]
+ [0.000e+000 0.000e+000 0.000e+000]]
+-------------
+[[0 0 0]
+ [0 0 0]
+ [0 0 0]]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># np.arange()</span></span><br><span class="line"><span class="comment">#创建一系列连续的数算是numpy里面类似python里面range的功能</span></span><br><span class="line"><span class="keyword">print</span> (np.arange(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2 3 4 5 6 7 8 9]</code></pre><h2 id="二、操作nddarray"><a href="#二、操作nddarray" class="headerlink" title="二、操作nddarray"></a>二、操作nddarray</h2><h3 id="矢量化-vectorization"><a href="#矢量化-vectorization" class="headerlink" title="矢量化 (vectorization)"></a>矢量化 (vectorization)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 矢量与矢量运算</span></span><br><span class="line">arr = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">                [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"元素之间相乘："</span>)</span><br><span class="line"><span class="comment">#注意区分矩阵之间的运算。这里的矢量原酸相当于是广播式的运算</span></span><br><span class="line"><span class="keyword">print</span> (arr * arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"矩阵相加："</span>)</span><br><span class="line"><span class="keyword">print</span> (arr + arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>元素之间相乘：
+[[ 1  4  9]
+ [16 25 36]]
+矩阵相加：
+[[ 2  4  6]
+ [ 8 10 12]]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 矢量与标量运算</span></span><br><span class="line"><span class="keyword">print</span> (<span class="number">1.</span> / arr)</span><br><span class="line"><span class="keyword">print</span> (<span class="number">2.</span> * arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[1.         0.5        0.33333333]
+ [0.25       0.2        0.16666667]]
+[[ 2.  4.  6.]
+ [ 8. 10. 12.]]</code></pre><h3 id="索引与切片"><a href="#索引与切片" class="headerlink" title="索引与切片"></a>索引与切片</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一维数组</span></span><br><span class="line">arr1 = np.arange(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> (arr1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (arr1[<span class="number">2</span>:<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2 3 4 5 6 7 8 9]
+[2 3 4]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多维数组</span></span><br><span class="line">arr2 = np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="comment">#要学会定义多维数组，arange是形成12个随机数，之后的reshape是形成维数</span></span><br><span class="line"><span class="comment">#多维数组的空间含义就是比如：3.4.5=长4宽5高3</span></span><br><span class="line"><span class="comment">#还有点数就是应用函数</span></span><br><span class="line"><span class="keyword">print</span> (arr2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (arr2[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (arr2[<span class="number">0</span>:<span class="number">2</span>, <span class="number">2</span>:])</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (arr2[:, <span class="number">1</span>:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>[4 5 6 7]
+[[2 3]
+ [6 7]]
+[[ 1  2]
+ [ 5  6]
+ [ 9 10]]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 条件索引</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出 data_arr 中 2015年后的数据</span></span><br><span class="line">data_arr = np.random.rand(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (data_arr)</span><br><span class="line"></span><br><span class="line">year_arr = np.array([[<span class="number">2000</span>, <span class="number">2001</span>, <span class="number">2000</span>],</span><br><span class="line">                     [<span class="number">2005</span>, <span class="number">2002</span>, <span class="number">2009</span>],</span><br><span class="line">                     [<span class="number">2001</span>, <span class="number">2003</span>, <span class="number">2010</span>]])</span><br><span class="line"></span><br><span class="line">is_year_after_2005 = year_arr &gt;= <span class="number">2005</span></span><br><span class="line"><span class="comment">#:他会扩展成同类型的数组</span></span><br><span class="line"><span class="keyword">print</span> (is_year_after_2005, is_year_after_2005.dtype)</span><br><span class="line"></span><br><span class="line">filtered_arr = data_arr[is_year_after_2005]</span><br><span class="line"></span><br><span class="line">filtered_arr = data_arr[year_arr &gt;= <span class="number">2005</span>]</span><br><span class="line"><span class="keyword">print</span> (filtered_arr)</span><br><span class="line"><span class="comment">#中间的一些语句可以删除</span></span><br><span class="line"><span class="comment">#最后生成得是一维数组，进行数据过滤的时候很有用</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0.61482194 0.0249229  0.28525661]
+ [0.05121173 0.37672803 0.86259463]
+ [0.22648329 0.4581513  0.18620441]]
+[[False False False]
+ [ True False  True]
+ [False False  True]] bool
+[0.05121173 0.86259463 0.18620441]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多个条件&amp; |</span></span><br><span class="line">filtered_arr = data_arr[(year_arr &lt;= <span class="number">2005</span>) &amp; (year_arr % <span class="number">2</span> == <span class="number">0</span>)]</span><br><span class="line"><span class="keyword">print</span> (filtered_arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0.61482194 0.28525661 0.37672803]</code></pre><h3 id="转置-transpose"><a href="#转置-transpose" class="headerlink" title="转置 === transpose"></a>转置 === transpose</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr = np.random.rand(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (arr)</span><br><span class="line"><span class="keyword">print</span> (arr.transpose())</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0.01538974 0.47573964 0.90684253]
+ [0.93683601 0.64306611 0.63846634]]
+[[0.01538974 0.93683601]
+ [0.47573964 0.64306611]
+ [0.90684253 0.63846634]]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#高维数组的转换(图像里面会用得到转换维度)</span></span><br><span class="line"></span><br><span class="line">arr3d = np.random.rand(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="keyword">print</span> (arr3d)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'----------------------'</span>)</span><br><span class="line"><span class="keyword">print</span> (arr3d.transpose((<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>))) <span class="comment"># 多维数组的转置和定义不会</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[[0.18074837 0.64652003 0.80527972 0.67800268]
+  [0.95766577 0.2498768  0.00304503 0.7058178 ]
+  [0.12523549 0.18796252 0.72463798 0.15352211]]
+
+ [[0.38808013 0.31075033 0.53082474 0.32254431]
+  [0.6861262  0.02999367 0.70980993 0.09099878]
+  [0.14987301 0.78237398 0.90159408 0.82897071]]]
+----------------------
+[[[0.18074837 0.64652003 0.80527972 0.67800268]
+  [0.38808013 0.31075033 0.53082474 0.32254431]]
+
+ [[0.95766577 0.2498768  0.00304503 0.7058178 ]
+  [0.6861262  0.02999367 0.70980993 0.09099878]]
+
+ [[0.12523549 0.18796252 0.72463798 0.15352211]
+  [0.14987301 0.78237398 0.90159408 0.82897071]]]</code></pre><h3 id="ndarray数据类型转化-astype"><a href="#ndarray数据类型转化-astype" class="headerlink" title="ndarray数据类型转化 === astype"></a>ndarray数据类型转化 === astype</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">zeros_float_arr = np.zeros((<span class="number">3</span>, <span class="number">4</span>), dtype=np.float64)</span><br><span class="line"><span class="keyword">print</span> (zeros_float_arr)</span><br><span class="line"><span class="keyword">print</span> (zeros_float_arr.dtype)</span><br><span class="line"></span><br><span class="line"><span class="comment"># astype转换数据类型</span></span><br><span class="line">zeros_int_arr = zeros_float_arr.astype(np.int32)</span><br><span class="line"><span class="keyword">print</span> (zeros_int_arr)</span><br><span class="line"><span class="keyword">print</span> (zeros_int_arr.dtype)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+float64
+[[0 0 0 0]
+ [0 0 0 0]
+ [0 0 0 0]]
+int32</code></pre><h3 id="文本文件的读取"><a href="#文本文件的读取" class="headerlink" title="文本文件的读取"></a>文本文件的读取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># loadtxt</span></span><br><span class="line">filename = <span class="string">'./presidential_polls.csv'</span></span><br><span class="line">data_array = np.loadtxt(filename,      <span class="comment"># 文件名</span></span><br><span class="line">                        delimiter=<span class="string">','</span>, <span class="comment"># 指定里面的元素分隔符</span></span><br><span class="line">                        dtype=str,     <span class="comment"># 指定数据类型</span></span><br><span class="line">                        usecols=(<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>)) <span class="comment"># 指定读取的列索引号</span></span><br><span class="line"><span class="keyword">print</span> (data_array, data_array.shape)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[&apos;cycle&apos; &apos;type&apos; &apos;matchup&apos;]
+ [&apos;2016&apos; &apos;&quot;polls-plus&quot;&apos; &apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;]
+ [&apos;2016&apos; &apos;&quot;polls-plus&quot;&apos; &apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;]
+ ...
+ [&apos;2016&apos; &apos;&quot;polls-only&quot;&apos; &apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;]
+ [&apos;2016&apos; &apos;&quot;polls-only&quot;&apos; &apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;]
+ [&apos;2016&apos; &apos;&quot;polls-only&quot;&apos; &apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;]] (10237, 3)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># loadtxt, 明确指定每列数据的类型</span></span><br><span class="line">filename = <span class="string">'./presidential_polls.csv'</span></span><br><span class="line">data_array = np.loadtxt(filename,      <span class="comment"># 文件名</span></span><br><span class="line">                        delimiter=<span class="string">','</span>, <span class="comment"># 分隔符</span></span><br><span class="line">                        skiprows=<span class="number">1</span>,</span><br><span class="line">                        dtype=&#123;<span class="string">'names'</span>:(<span class="string">'cycle'</span>, <span class="string">'type'</span>, <span class="string">'matchup'</span>),</span><br><span class="line">                               <span class="string">'formats'</span>:(<span class="string">'i4'</span>, <span class="string">'S15'</span>, <span class="string">'S50'</span>)&#125;,     <span class="comment"># 数据类型</span></span><br><span class="line">                        usecols=(<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>)) <span class="comment"># 指定读取的列索引号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (data_array, data_array.shape) <span class="comment"># 读取的结果是一维的数组，每个元素是一个元组</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[(2016, b&apos;&quot;polls-plus&quot;&apos;, b&apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;)
+ (2016, b&apos;&quot;polls-plus&quot;&apos;, b&apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;)
+ (2016, b&apos;&quot;polls-plus&quot;&apos;, b&apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;) ...
+ (2016, b&apos;&quot;polls-only&quot;&apos;, b&apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;)
+ (2016, b&apos;&quot;polls-only&quot;&apos;, b&apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;)
+ (2016, b&apos;&quot;polls-only&quot;&apos;, b&apos;&quot;Clinton vs. Trump vs. Johnson&quot;&apos;)] (10236,)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、np的常用函数"><a href="#三、np的常用函数" class="headerlink" title="三、np的常用函数"></a>三、np的常用函数</h2><h3 id="转置transpose"><a href="#转置transpose" class="headerlink" title="转置transpose"></a>转置transpose</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr = np.random.rand(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (arr)</span><br><span class="line"><span class="keyword">print</span> (arr.transpose())</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0.78485041 0.88817969 0.34809014]
+ [0.32744286 0.97539301 0.94401872]]
+[[0.78485041 0.32744286]
+ [0.88817969 0.97539301]
+ [0.34809014 0.94401872]]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#高维数组的转换(图像里面会用得到转换维度)</span></span><br><span class="line"><span class="comment">#不懂这里！！！</span></span><br><span class="line">arr3d = np.random.rand(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="keyword">print</span> (arr3d)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'----------------------'</span>)</span><br><span class="line"><span class="keyword">print</span> (arr3d.transpose((<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>))) <span class="comment"># 多维数组的转置和定义不会</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[[0.28492549 0.60197236 0.45582367 0.21992479]
+  [0.1747163  0.69201365 0.85460359 0.65311699]
+  [0.62189644 0.25217555 0.16347156 0.29831219]]
+
+ [[0.42826733 0.81396165 0.187138   0.560564  ]
+  [0.10162186 0.66419751 0.03261665 0.06969256]
+  [0.55461652 0.55020586 0.50693591 0.31741807]]]
+----------------------
+[[[0.28492549 0.60197236 0.45582367 0.21992479]
+  [0.42826733 0.81396165 0.187138   0.560564  ]]
+
+ [[0.1747163  0.69201365 0.85460359 0.65311699]
+  [0.10162186 0.66419751 0.03261665 0.06969256]]
+
+ [[0.62189644 0.25217555 0.16347156 0.29831219]
+  [0.55461652 0.55020586 0.50693591 0.31741807]]]</code></pre><h3 id="ceil和floor和rint和isnan"><a href="#ceil和floor和rint和isnan" class="headerlink" title="ceil和floor和rint和isnan"></a>ceil和floor和rint和isnan</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">arr = np.random.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (arr)</span><br><span class="line"><span class="keyword">print</span> (np.ceil(arr))</span><br><span class="line"><span class="comment">#向上最接近的整数</span></span><br><span class="line"><span class="keyword">print</span> (np.floor(arr))</span><br><span class="line"><span class="comment">#向下最接近的整数</span></span><br><span class="line"><span class="keyword">print</span> (np.rint(arr))</span><br><span class="line"><span class="comment">#四舍五入</span></span><br><span class="line"><span class="keyword">print</span> (np.isnan(arr))</span><br><span class="line"><span class="comment">#判断元素是否为NaN</span></span><br><span class="line"><span class="comment">#笔记上还有其他的函数</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 0.262106   -1.33680008 -1.08562543]
+ [ 0.3990978   0.1410074   0.64278274]]
+[[ 1. -1. -1.]
+ [ 1.  1.  1.]]
+[[ 0. -2. -2.]
+ [ 0.  0.  0.]]
+[[ 0. -1. -1.]
+ [ 0.  0.  1.]]
+[[False False False]
+ [False False False]]</code></pre><h3 id="where"><a href="#where" class="headerlink" title="where"></a>where</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr = np.random.randn(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="keyword">print</span> (arr)</span><br><span class="line"></span><br><span class="line">np.where(arr &gt; <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>)</span><br><span class="line"><span class="comment">#（条件，满足输出，不满足输出）</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[ 2.04688394  0.48063737  1.20876913 -0.93412937]
+ [-0.43427472 -1.47755481  0.36882256 -0.08943138]
+ [-0.2847686   0.96915893  0.32641235  0.28346922]]
+
+
+
+
+
+array([[ 1,  1,  1, -1],
+       [-1, -1,  1, -1],
+       [-1,  1,  1,  1]])</code></pre><h3 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">arr = np.arange(<span class="number">10</span>).reshape(<span class="number">5</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">print</span> (arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (np.sum(arr))</span><br><span class="line"><span class="keyword">print</span> (np.sum(arr, axis=<span class="number">0</span>))</span><br><span class="line"><span class="keyword">print</span> (np.sum(arr, axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0 1]
+ [2 3]
+ [4 5]
+ [6 7]
+ [8 9]]
+45
+[20 25]
+[ 1  5  9 13 17]</code></pre><h3 id="all和any"><a href="#all和any" class="headerlink" title="all和any"></a>all和any</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr = np.random.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (np.any(arr &gt; <span class="number">0</span>))</span><br><span class="line"><span class="comment">#有一个就对</span></span><br><span class="line"><span class="keyword">print</span> (np.all(arr &gt; <span class="number">0</span>))</span><br><span class="line"><span class="comment">#全部对才对</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">·用处就是判断一组数据当中，是否===有点类似布尔类型的</span></span><br><span class="line"><span class="string">·这个也可以应用在pandas中的DataFrame中</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[-1.020184   -0.48466272 -0.8496271 ]
+ [ 0.88815825 -0.81911857  0.64570539]]
+True
+False
+
+
+
+
+
+&apos;\n·用处就是判断一组数据当中，是否===有点类似布尔类型的\n·这个也可以应用在pandas中的DataFrame中\n&apos;</code></pre><h3 id="unique"><a href="#unique" class="headerlink" title="unique"></a>unique</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line"><span class="keyword">print</span> (arr)</span><br><span class="line"><span class="keyword">print</span> (np.unique(arr))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[1 2 1]
+ [2 3 4]]
+[1 2 3 4]</code></pre><!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEwMDgxODMyNTddfQ==
+-->
+          
+            <div class='article_footer'>
+              <!-- TODO:大概在这添加赞赏功能 -->
+              <!-- 
+                先在资源文件夹中添加_reward CSS文件;然后在style.styl文件中加入引用刚刚添加的
+                将reward.ejs文件放在_widget文件夹里面
+                最后改article.ejs文件
+                ===试试能不能直接在文章头引用该_widget
+                好的,不能,溜了!
+               -->
+              <!-- TODO:大概在这添加赞赏功能 -->
+
+              
+                
+  
+    
+    
+  
+
+  <section class="widget related_posts  desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>作者相关文章</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\02\10\DataAnalysis\Data-可视化\" title="Data-数据可视化综述" rel="bookmark">Data-数据可视化综述</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文作者：尼采般地抒情</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://blog.wztlink1013.com/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/>https://blog.wztlink1013.com/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-12T21:07:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年7月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/numpy/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>numpy</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wztlink1013.com/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/&title=numpy-使用总结 - 尼采般地抒情&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wztlink1013.com/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/&title=numpy-使用总结 - 尼采般地抒情&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.wztlink1013.com/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/&title=numpy-使用总结 - 尼采般地抒情&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEa0lEQVR42u3aQXbbMAwFQN//0u0J9Ax8gLTdDneRE4kaegH84PXHOrJeCMCCtcCCBWuBvQL7CtfjjR8+f/r7p5/fXX+3r+71LQ+wYMGCBQsWLFiwd2HLBXAI1z2g6v2r+0z/rv0csGDBggULFixYsB+BrRbeXehuAZ++8Bhm6gEWLFiwYMGCBQv2p2DTgjw9sO0AHSxYsGDBggULFuz/Dbs9UNFtGNLnggULFixYsGDBgv1t2LSQTzc8LeCnB/y1kzBgwYIFCxYsWLBgS7DTQv9f+zn2AAsWLFiwYMGCBXsFdrqmwfKpAY7ufdY8wIIFCxYsWLBgwV6BTQvkrYB4qwHZOthxUA4WLFiwYMGCBQv2q2C3NlQFSAcrtoLsuAEBCxYsWLBgwYIFewW2uoF0o124aVDdbRTSxuLxOliwYMGCBQsWLNgrsGlwnQ5CpAMT2/s8FeSDBQsWLFiwYMGCvQvbLbzThmKrYZg2JtPnggULFixYsGDBgv0O2G5wvVXwV+FPPzf9AownYcCCBQsWLFiwYMGuwHYfVA2+04I7ffG08el+vvYfBLBgwYIFCxYsWLAt2G7wPB2wmMJugaVfiLdfMLBgwYIFCxYsWLBXYKcPPt0QbAXQ28F3HHSDBQsWLFiwYMGCvQK7FYinq3q/Lli677UGASxYsGDBggULFuwIthtcTwPx9PerIGnQfWxgAyxYsGDBggULFuwR2GohfvsApsApbNpQgAULFixYsGDBgr0LmwbTaQA+DdLLgfPyYEh7YAMsWLBgwYIFCxbsUdjugMR2gX/rILcajLefgwULFixYsGDBgv0IbPeGW0DTRmPaIKwF/WDBggULFixYsGCvwE4HHbYagyrw9EDSRqG8H7BgwYIFCxYsWLBXYacbS8G6gxjd/cSDF80GCSxYsGDBggULFuxd2GnQu1Xobw2QbA9iVH8fLFiwYMGCBQsW7F3YaYOQDkxUX+BbAu3ydbBgwYIFCxYsWLBXYFOg7cagO/jRDcynAfla5wUWLFiwYMGCBQt2BbbbKHSD8FNw02B6OrDxuD+wYMGCBQsWLFiwV2C7gwtbL7xVuFcD6O6+u+8FFixYsGDBggUL9rthp4MaafCdHnD3+jSoBwsWLFiwYMGCBftZ2K2geutFqg1BOtDRbUQe7wcWLFiwYMGCBQv2K2C3Bh22B0GmhfxWQA8WLFiwYMGCBQv2M7DTtRWAdwcwugcx3Vd7YAMsWLBgwYIFCxbsUdhpgZwewOlBje7ARrVxebtfsGDBggULFixYsFdhu0DTIPvYizWBuwcWD2yABQsWLFiwYMGCPQo7HdBIg+pbQXT699X7ggULFixYsGDBgv1t2GphXX1+FzxtHNIDBQsWLFiwYMGCBfvbsN3CulvIdwP17ntMB1TAggULFixYsGDBfga2O7CxFWBvDVh036s7kPH2OliwYMGCBQsWLNirsOmgQgo0Dcq3g/HpfsGCBQsWLFiwYMHehbV2F1iwYC2wYMFaYI+uvwH9FnrnBT0fAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+      
+        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer"
+          
+            href="https://t.me/share/url?url=https://blog.wztlink1013.com/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/&text=numpy-使用总结 - 尼采般地抒情"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/telegram.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/02/10/DataAnalysis/pandas-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>pandas-基本知识</p>
+                <p class='content'>一、Pandas数据结构1import pandas as pd
+
+Series
+
+通过list构建Series
+
+
+123ser_obj = pd.Series(range(10, 20,2)...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/02/10/DataAnalysis/Data-%E6%B8%85%E6%B4%97%E5%92%8C%E8%A7%84%E6%95%B4/'>
+                <p class='title'>Data-清洗和规整<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>一、删除指定行列数据12import pandas as pdimport numpy as np
+
+
+12345678dict_data = &#123;'A': 1.,           ...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> <b>留言评论区</b></p>
+      
+        <p cst>欢迎在此畅所欲言、</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'numpy-使用总结',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/wztlink1013/figure/blogbase/touxiang.jpg'/>
+        </a>
+      
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/wztlink1013"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@wztlink1013.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2550374815&site=qq&menu=yes"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++=添加彩色变换字体++++++++++++++++++ -->
+  <div id="binft"></div>
+  <script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["青青陵上柏，磊磊涧中石。", "人生天地间，忽如远行客。","斗酒相娱乐，聊厚不为薄。", "驱车策驽马，游戏宛与洛。","洛中何郁郁，冠带自相索。","长衢罗夹巷，王侯多第宅。","两宫遥相望，双阙百余尺。","极宴娱心意，戚戚何所迫？"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
+    
+  </div>
+  
+</section>
+
+  
+
+  
+    
+    
+
+
+  
+
+<section class="widget list group shadow desktop mobile">
+  
+  <header>
+    
+      <i class="fab fa-apple fa-fw" aria-hidden="true"></i><span class='name'>数据分析挖掘</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/Data-%E5%8F%AF%E8%A7%86%E5%8C%96/" href="/2020/02/10/DataAnalysis/Data-%E5%8F%AF%E8%A7%86%E5%8C%96/"
+          
+          
+          id="20200210DataAnalysisData-E58FAFE8A786E58C96"
+          >
+          <div class='name'>
+            
+            Data-数据可视化综述
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/07/07/DataAnalysis/Modeling-%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/2020/07/07/DataAnalysis/Modeling-%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"
+          
+          
+          id="20200707DataAnalysisModeling-E695B0E68DAEE68C96E68E98"
+          >
+          <div class='name'>
+            
+            Modeling-数据挖掘
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/Data-%E6%9C%AC%E5%9C%B0%E8%AF%BB%E5%8F%96/" href="/2020/02/10/DataAnalysis/Data-%E6%9C%AC%E5%9C%B0%E8%AF%BB%E5%8F%96/"
+          
+          
+          id="20200210DataAnalysisData-E69CACE59CB0E8AFBBE58F96"
+          >
+          <div class='name'>
+            
+            Data-读取本地数据
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/08/DataAnalysis/DataAnalysis-SOP/" href="/2020/02/08/DataAnalysis/DataAnalysis-SOP/"
+          
+          
+          id="20200208DataAnalysisDataAnalysis-SOP"
+          >
+          <div class='name'>
+            
+            DataAnalysis-SOP
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/Data-%E6%8F%8F%E8%BF%B0%E6%95%B0%E6%8D%AE/" href="/2020/02/10/DataAnalysis/Data-%E6%8F%8F%E8%BF%B0%E6%95%B0%E6%8D%AE/"
+          
+          
+          id="20200210DataAnalysisData-E68F8FE8BFB0E695B0E68DAE"
+          >
+          <div class='name'>
+            
+            Data-描述数据
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/pandas-%E5%88%86%E7%BB%84%E8%81%9A%E5%90%88/" href="/2020/02/10/DataAnalysis/pandas-%E5%88%86%E7%BB%84%E8%81%9A%E5%90%88/"
+          
+          
+          id="20200210DataAnalysispandas-E58886E7BB84E8819AE59088"
+          >
+          <div class='name'>
+            
+            Pandas-分组聚合
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/Data-%E6%B8%85%E6%B4%97%E5%92%8C%E8%A7%84%E6%95%B4/" href="/2020/02/10/DataAnalysis/Data-%E6%B8%85%E6%B4%97%E5%92%8C%E8%A7%84%E6%95%B4/"
+          
+          
+          id="20200210DataAnalysisData-E6B885E6B497E5928CE8A784E695B4"
+          >
+          <div class='name'>
+            
+            Data-清洗和规整
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/pandas-%E5%90%84%E7%A7%8D%E7%B4%A2%E5%BC%95/" href="/2020/02/10/DataAnalysis/pandas-%E5%90%84%E7%A7%8D%E7%B4%A2%E5%BC%95/"
+          
+          
+          id="20200210DataAnalysispandas-E59084E7A78DE7B4A2E5BC95"
+          >
+          <div class='name'>
+            
+            pandas-索引
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" href="/2020/02/10/DataAnalysis/numpy-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"
+          
+          
+          id="20200210DataAnalysisnumpy-E4BDBFE794A8E680BBE7BB93"
+          >
+          <div class='name'>
+            
+            numpy-使用总结
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2020/02/10/DataAnalysis/pandas-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" href="/2020/02/10/DataAnalysis/pandas-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"
+          
+          
+          id="20200210DataAnalysispandas-E59FBAE69CACE79FA5E8AF86"
+          >
+          <div class='name'>
+            
+            pandas-基本知识
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、NumPy"><span class="toc-text">一、NumPy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-理解多维数组"><span class="toc-text">ndarray 理解多维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建ndarray"><span class="toc-text">创建ndarray</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、操作nddarray"><span class="toc-text">二、操作nddarray</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#矢量化-vectorization"><span class="toc-text">矢量化 (vectorization)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引与切片"><span class="toc-text">索引与切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转置-transpose"><span class="toc-text">转置 &#x3D;&#x3D;&#x3D; transpose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray数据类型转化-astype"><span class="toc-text">ndarray数据类型转化 &#x3D;&#x3D;&#x3D; astype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本文件的读取"><span class="toc-text">文本文件的读取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、np的常用函数"><span class="toc-text">三、np的常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#转置transpose"><span class="toc-text">转置transpose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ceil和floor和rint和isnan"><span class="toc-text">ceil和floor和rint和isnan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#where"><span class="toc-text">where</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sum"><span class="toc-text">sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#all和any"><span class="toc-text">all和any</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unique"><span class="toc-text">unique</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Bug/" href="/categories/Bug/"
+            id="categoriesBug"
+            ><div class='name'>Bug</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataAnalysis/" href="/categories/DataAnalysis/"
+            id="categoriesDataAnalysis"
+            ><div class='name'>DataAnalysis</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataBase/" href="/categories/DataBase/"
+            id="categoriesDataBase"
+            ><div class='name'>DataBase</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataStructure/" href="/categories/DataStructure/"
+            id="categoriesDataStructure"
+            ><div class='name'>DataStructure</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Environment/" href="/categories/Environment/"
+            id="categoriesEnvironment"
+            ><div class='name'>Environment</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Hexo/" href="/categories/Hexo/"
+            id="categoriesHexo"
+            ><div class='name'>Hexo</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Language/" href="/categories/Language/"
+            id="categoriesLanguage"
+            ><div class='name'>Language</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/MachingLearning/" href="/categories/MachingLearning/"
+            id="categoriesMachingLearning"
+            ><div class='name'>MachingLearning</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/OS/" href="/categories/OS/"
+            id="categoriesOS"
+            ><div class='name'>OS</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/PostProduction/" href="/categories/PostProduction/"
+            id="categoriesPostProduction"
+            ><div class='name'>PostProduction</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Spider/" href="/categories/Spider/"
+            id="categoriesSpider"
+            ><div class='name'>Spider</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Web/" href="/categories/Web/"
+            id="categoriesWeb"
+            ><div class='name'>Web</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+      
+    </div>
+    
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/wztlink1013"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@wztlink1013.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2550374815&amp;site=qq&amp;menu=yes"
+                class="social fab fa-qq flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://blog.wztlink1013.com"><font size=3 color="#000000">Copyright © 2019-2020 尼采般地抒情 | </font></a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP"><a href="http://icp.chinaz.com/wztlink1013.com" target="_blank" rel="noopener"><font size=3 color="#000000">赣ICP备20002826号 | </font></a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" data-original="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP"><a href="https://icp.gov.moe/?keyword=20201013" target="_blank"><font size=3 color="#000000"> 萌ICP备20201013号</p>
+
+        <!-- 网站最底端的那些小格子 -->
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+          <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+          <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://www.aliyun.com/" target="_blank" title="阿里云提供域名相关服务">
+          <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">Aliyun</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+          <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+        </div>
+        <div class="github-badge">
+            <a style="color: #fff" rel="license" href="https://volantis.js.org/" target="_blank" title="站点使用 Volantis 主题">
+          <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Volantis</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+          <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
+        </div>
+        <div class="github-badge">
+          <a style="color: #fff" rel="license" href="https://travellings.now.sh/" target="_blank" title="开往-友链接力">
+          <span class="badge-subject">Link</span><span class="badge-value bg-red">Travelling</span></a>
+        </div>
+        <!-- <div class="github-badge">
+          <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+        </div>
+        <div class="github-badge">
+          <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+        </div>
+        <div class="github-badge">
+          <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">64.4k</span>
+        </div> -->
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+<!-- artitalk-开始 -->
+
+<!-- artitalk-结束 -->
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.2/background_picture/ZIYOUZIYI.jpg", "https://cdn.jsdelivr.net/gh/wztlink1013/CDN@1.8/Pictures/blogbackground/background1.jpg", "https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.2/background_picture/AILUN_AERMIN.jpg", "https://cdn.jsdelivr.net/gh/wztlink1013/CDN-Volantis@1.2/background_picture/MIKASA.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "4000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "4000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "G24t81T4NDSUeGy6t0azWRQR-gzGzoHsz",
+    appKey: "IEUmFFoYQ27XvIRw3JF77Plk",
+    placeholder: "快来评论吧~",
+    pageSize:'8',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  <!-- 动态线条背景 -->
+  <!-- <script type="text/javascript" color="30,144,255" opacity='1' zIndex="-2" count="200" 
+  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script> -->
+  <!-- 樱花飘落背景 -->
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SGYZ0910/CDN@1.0.6/js/sakura.js"></script> -->
+  <!-- 速度优化脚本 -->
+  <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.0.2/js/instantclick-1.2.2.js" type="module"></script>
+  <!-- 页面下钱 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> -->
+  <!-- <script src="https://www.yyhy.me/q.js"></script> -->
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: true,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
