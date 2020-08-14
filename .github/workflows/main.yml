@@ -28,13 +28,13 @@ jobs:
       env:
         Github_Token: ${{ secrets.TOKEN_GITHUBAPI }}
       run: | 
-        git clone https://github.com/wztlink1013/test .test
+        git clone https://github.com/wztlink1013/test test
         git clone https://github.com/wztlink1013/wztlink1013.github.io .github_pages
-        cd .test
+        cd test
         rm -r .git
         rm -r .github
         cd ..
-        mv .test/ .github_pages/ 
+        mv test/ .github_pages/ 
         cd .github_pages
         git status
         git add .
