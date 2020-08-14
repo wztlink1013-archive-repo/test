@@ -33,7 +33,7 @@ jobs:
         cd wztlink1013.github.io
         mkdir test
         cd ..
-        mv ./test ./wztlink1013.github.io/
+        sudo mv ./test ./wztlink1013.github.io/
     - name: push到wztlink1013.github.io
       env:
         Github_Token: ${{ secrets.token_GithubAPI }}
