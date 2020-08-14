@@ -26,7 +26,7 @@ jobs:
 
     - name: 在云端进行复制文件夹操作
       env:
-        Github_Token: ${{ secrets.TOKEN_GithubAPI }}
+        Github_Token: ${{ secrets.TOKEN_GITHUBAPI }}
       run: | 
         git clone https://github.com/wztlink1013/test .test
         git clone https://github.com/wztlink1013/wztlink1013.github.io .github_pages
