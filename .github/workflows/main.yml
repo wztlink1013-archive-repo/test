@@ -37,7 +37,7 @@ jobs:
         git status
         git add .
         git commit -m "add gh-pages files"
-        git push "https://${Github_Token}@github.com/wztlink1013/wztlink1013.github.io"  master:master
+        git push --force --quiet "https://${Github_Token}@github.com/wztlink1013/wztlink1013.github.io"  master:master
 
     # - name: push到wztlink1013.github.io
     #   env:
