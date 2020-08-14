@@ -21,7 +21,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: 配置Git，Clone两个仓库
       run: | 
-        shell: bash
         git config --global user.name 'wztlink1013' 
         git config --global user.email '2550374815@qq.com'
         git clone https://github.com/wztlink1013/test.git
@@ -29,7 +28,6 @@ jobs:
 
     - name: 在云端进行复制文件夹操作
       run: | 
-        shell: cmd
         cd wztlink1013.github.io
         mkdir test
         cd ..
@@ -39,7 +37,6 @@ jobs:
       env:
         Github_Token: ${{ secrets.token_GithubAPI }}
       run: | 
-        shell: bash
         cd wztlink1013.github.io
         git status
         git add .
