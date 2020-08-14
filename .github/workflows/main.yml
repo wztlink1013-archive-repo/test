@@ -1,4 +1,4 @@
-name: CI
+name: CI for wztlink1013.github.io
 
 on: [watch]
 
