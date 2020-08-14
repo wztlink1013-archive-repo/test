@@ -30,7 +30,7 @@ jobs:
       run: | 
         git clone https://github.com/wztlink1013/test .test
         git clone https://github.com/wztlink1013/wztlink1013.github.io .github_pages
-        mv/ .test/ .github_pages/ 
+        mv .test/ .github_pages/ 
         cd .github_pages
         git status
         git add .
