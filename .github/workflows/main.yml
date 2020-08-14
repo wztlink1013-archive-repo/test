@@ -28,11 +28,9 @@ jobs:
       env:
         Github_Token: ${{ secrets.token_GithubAPI }}
       run: | 
+        git clone https://github.com/wztlink1013/test .test
         git clone https://github.com/wztlink1013/wztlink1013.github.io .github_pages
-        cd .github_pages
-        mkdir test
-        cd ..
-        mv ./test/ ./.github_pages/
+        mv ./github_pages/ ./test/ 
         git status
         git add .
         git commit -m "add gh-pages files"
