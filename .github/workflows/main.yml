@@ -28,7 +28,6 @@ jobs:
       env:
         Github_Token: ${{ secrets.token_GithubAPI }}
       run: | 
-        cd ..
         git clone https://github.com/wztlink1013/wztlink1013.github.io .github_pages
         cd .github_pages
         mkdir test
