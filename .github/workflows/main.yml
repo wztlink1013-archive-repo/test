@@ -28,7 +28,7 @@ jobs:
         git clone https://github.com/wztlink1013/wztlink1013.github.io.git
 
     - name: 在云端进行复制文件夹操作
-      if: ((Test-Path -LiteralPath variable:\LASTEXITCODE)) { exit $LASTEXITCODE }
+      if: startsWith(github.event.ref, 'refs/tags/')
       shell: pwsh
       run: | 
         cd wztlink1013.github.io
