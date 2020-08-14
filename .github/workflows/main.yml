@@ -28,12 +28,11 @@ jobs:
         git clone https://github.com/wztlink1013/wztlink1013.github.io.git
 
     - name: 在云端进行复制文件夹操作
-      shell: bash
       run: | 
         cd wztlink1013.github.io
         mkdir test
         cd ..
-        mv test wztlink1013.github.io
+        xcopy .\test .\wztlink1013.github.io /e
     - name: push到wztlink1013.github.io
       env:
         Github_Token: ${{ secrets.token_GithubAPI }}
