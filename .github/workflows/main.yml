@@ -1,4 +1,4 @@
-name: CI for wztlink1013.github.io
+name: CI for website-source
 
 on: [watch]
 
@@ -19,14 +19,9 @@ jobs:
         Github_Token: ${{ secrets.TOKEN_GITHUBAPI }}
       run: | 
         git clone https://github.com/wztlink1013/test test
-        git clone https://github.com/wztlink1013/wztlink1013.github.io .github_pages
         cd test
-        rm -r .git
-        rm -r .github
-        cd ..
-        mv test/ .github_pages/ 
-        cd .github_pages
+        cp -r ./js/ ./backup/
         git status
         git add .
-        git commit -m "add gh-pages files"
-        git push --force --quiet "https://${Github_Token}@github.com/wztlink1013/wztlink1013.github.io"  master:master
+        git commit -m "CI for website-source"
+        git push --force --quiet "https://${Github_Token}@github.com/wztlink1013/test"  master:master
